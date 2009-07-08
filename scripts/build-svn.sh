@@ -1,12 +1,17 @@
 #!/bin/sh
 
-PACKAGE_NAME="pysvn-1.7.0"
-FILENAME="$PACKAGE_NAME.tar.gz"
-DOWNLOAD_URL="http://pysvn.barrys-emacs.org/source_kits/$FILENAME"
-
 for dirname in lib/python*; do
 	PYTHON=`basename $dirname`
 	SITE_PACKAGES="lib/$PYTHON/site-packages"
+
+	if test "$PYTHON" = "python2.6"; then
+		PACKAGE_NAME="pysvn-1.6.3"
+	else
+		PACKAGE_NAME="pysvn-1.6.2"
+	fi
+
+	FILENAME="$PACKAGE_NAME.tar.gz"
+	DOWNLOAD_URL="http://pysvn.barrys-emacs.org/source_kits/$FILENAME"
 
 	if test ! -e "$FILENAME" -o ! -e $SITE_PACKAGES/pysvn; then
 		wget $DOWNLOAD_URL -O $FILENAME
