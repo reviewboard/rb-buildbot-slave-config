@@ -1,6 +1,6 @@
 #!/bin/sh
 
-PACKAGE_NAME="pysvn-1.6.2"
+PACKAGE_NAME="pysvn-1.7.0"
 FILENAME="$PACKAGE_NAME.tar.gz"
 DOWNLOAD_URL="http://pysvn.barrys-emacs.org/source_kits/$FILENAME"
 
