@@ -17,8 +17,8 @@ for dirname in lib/python*; do
 		wget $DOWNLOAD_URL -O $FILENAME
 		tar -xzvf $FILENAME
 		cd $PACKAGE_NAME/Source
-		$PYTHON setup.py configure
-		make
-		mv pysvn ../../$SITE_PACKAGES
+		$PYTHON setup.py configure || exit 1
+		make || exit 1
+		mv pysvn ../../$SITE_PACKAGES || exit 1
 	fi
 done
